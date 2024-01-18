@@ -8,7 +8,10 @@ export class MyFirstCdkProjectStack extends cdk.Stack {
 
     // The code that defines your stack goes here
     new s3.Bucket(this, 'MyFirstBucket', {
-      versioned: true
+      versioned: true,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
+      bucketName: "my-first-cdk-bucket-keshav"
     });
   }
 }
